@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/v5e_ghRxYs8"></iframe>
+    <form name="feedback">
+        <h2> Website Feedback </h2>
+  
+        <p>
+            <label for="fname"> First Name: </label>
+            <br>
+            <input type="text" id="fname" name="fname" placeholder="anonymous" required>
+        </p>
+  
+        <p>
+            <label for="lname"> Last Name: </label>
+            <br>
+            <input type="text" id="lname" name="lname" placeholder="anonymous" required>
+        </p>
+  
+        <p>
+            <label for="mail"> Email Address: </label>
+            <br>
+            <input type="email" id="mail" name="mail" placeholder="name@domain.com">
+        </p>
+  
+        <fieldset>
+            <legend>Would you recommend this website to others?</legend>
+            <input type="radio" id="recommend_yes" name="recommend" value="yes">
+            <label for="recommend_yes"> Yes </label><br>
+            <input type="radio" id="recommend_no" name="recommend" value="no">
+            <label for="recommend_no"> No </label>
+        </fieldset>
+  
+        <p>
+            <label for="favorite_site"> Select your favorite website: </label>
+            <br>
+            <select id="favorite_site" name="favorite_site">
+            <option value=""> --Please choose a website-- </option>
+            <option value="youtube"> YouTube </option>
+            <option value="facebook"> Facebook </option>
+            <option value="twitter"> Twitter </option>
+            <option value="tiktok"> TikTok </option>
+            <option value="tumblr"> Tumblr </option>
+            </select>
+        </p>
+  
+        <p>
+            <label for="rating"> Rate the website on a scale of 1 to 10: </label>
+            <br>
+            <input type="range" id="rating" name="rating" min="1" max="10" value="5">
+        </p>
+  
+        <p>
+            <label for="comment"> Additional Comments: </label>
+            <br>
+            <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+        </p>
+        <p>
+            <label for="date"> Today's Date: </label>
+            <br>
+            <input type="text" id="today" name="today" placeholder="mm/dd/yyyy">
+        </p>
+        <p>
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday">
+        </p>
+        <p>
+            <label for="music"> Music Platforms Used </label>
+            <br>
+            <input type="checkbox" id="Spotify" name="music" value="Spotify">
+            <label for="Spotify"> Spotify </label><br>
+
+            <input type="checkbox" id="youtube" name="music" value="youtube" checked>
+            <label for="youtube"> YouTube </label><br>
+
+            <input type="checkbox" id="Pandora" name="music" value="Pandora">
+            <label for="Pandora"> Pandora </label><br>
+        </p>
+        <p>
+            <button type="submit"> Submit </button>
+        </p>
+    </form>
+
+</html>
