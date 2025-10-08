@@ -1,5 +1,29 @@
 <!DOCTYPE html>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style type="text/css">
+        .container-xxl{
+            background-color: hsl(145, 82%, 13%);
+            color: hsl(29, 88%, 16%);
+            padding: 0;
+        }
+        .navbar{
+            background-color: hsl(145, 78%, 21%);
+            color: aliceblue;
+        }
+        iframe{
+            margin-left: 20px;
+            border-top: 10px hsl(146, 68%, 24%);
+            border-left: 20px hsl(146, 68%, 24%);
+            border-right: 20px hsl(146, 68%, 24%);
+            border-bottom: 20px hsl(146, 68%, 24%);
+            box-shadow: 8px 8px 10px hsl(145, 82%, 13%);
+        }
+    </style>
+
+    
+</head>
 <body>
     <div class="container-xxl">
         <div class="row">
@@ -31,10 +55,11 @@
                     <input class="form-control" type="text" id="lname" name="lname" placeholder="anonymous" required>
                     <label for="lname"> Last Name: </label>
                 </div>
+                <div>
                     <label for="mail"> Email Address: </label>
                     <br>
                     <input type="email" id="mail" name="mail" placeholder="name@domain.com">
-                </p>
+                </div>
           
                 <fieldset>
                     <legend>Would you recommend this website to others?</legend>
@@ -44,7 +69,7 @@
                     <label for="recommend_no"> No </label>
                 </fieldset>
           
-                <p>
+                <div>
                     <label for="favorite_site"> Select your favorite website: </label>
                     <br>
                     <select id="favorite_site" name="favorite_site">
@@ -55,29 +80,29 @@
                     <option value="tiktok"> TikTok </option>
                     <option value="tumblr"> Tumblr </option>
                     </select>
-                </p>
+                </div>
           
-                <p>
+                <div>
                     <label for="rating"> Rate the website on a scale of 1 to 10: </label>
                     <br>
                     <input type="range" id="rating" name="rating" min="1" max="10" value="5">
-                </p>
+                </div>
           
-                <p>
+                <div>
                     <label for="comment"> Additional Comments: </label>
                     <br>
                     <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
-                </p>
-                <p>
+                </div>
+                <div>
                     <label for="date"> Today's Date: </label>
                     <br>
                     <input type="text" id="today" name="today" placeholder="mm/dd/yyyy">
-                </p>
-                <p>
+                </div>
+                <div>
                     <label for="birthday">Birthday:</label>
                     <input type="date" id="birthday" name="birthday">
-                </p>
-                <p>
+                </div>
+                <div>
                     <label for="music"> Music Platforms Used </label>
                     <br>
                     <input type="checkbox" id="Spotify" name="music" value="Spotify">
@@ -88,10 +113,11 @@
         
                     <input type="checkbox" id="Pandora" name="music" value="Pandora">
                     <label for="Pandora"> Pandora </label><br>
-                </p>
-                <p>
-                    <button type="submit"> Submit </button>
-                </p>
+                </div>
+                <div>
+                    <input type="submit" class=""> Submit </input>
+                    
+                </div>
                 
             </form>
         </div>
