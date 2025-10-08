@@ -2,13 +2,6 @@ div{
   background-color:  hsla(140, 60%, 26%, 0.3);
 }
 
-
- div.navbar, div.introduction{
-    position: fixed;
-/*    width: var(--page-width);
-    top:var(--page-top);*/
-}
-
 footer{
     position: fixed;
 }
@@ -19,19 +12,18 @@ div.introduction h1, p{
 }
 
 div.introduction img{
+    /*display: grid;*/
     float: right;
     width: 30%;
     height: 50%;
-    grid-column: 4/5;
-    grid-row: 1/3;
 }
 div.assignment{
-    position: absolute;
+    grid-row: 1/3;
 }
-
 p{
     font-family: Helvetica;
     line-height: 20px;
+    text-align: center;
 }
 
 li{
