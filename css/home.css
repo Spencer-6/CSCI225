@@ -1,0 +1,32 @@
+:root{
+    --body-color: hsla(199, 45%, 74%, 0.87);
+    --page-color: hsla(19, 67%, 92%, 0.99);
+    --sidebar-color: hsla(59, 47%, 67%, 0.92);
+   /* --page-width: 30%;
+    --page-top: 85%;
+    --bottom-bar-height: 15vh;*/
+}
+
+ div.navbar, div.introduction{
+    position: fixed;
+/*    width: var(--page-width);
+    top:var(--page-top);*/
+}
+
+footer{
+    position: fixed;
+}
+
+div.introduction h1, p{
+    float: left;
+    width: 30%;
+}
+
+div.introduction img{
+    float: right;
+    width: 30%;
+    height: 50%;
+}
+div.assignment{
+    position: absolute;
+}
