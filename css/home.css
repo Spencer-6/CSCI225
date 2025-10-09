@@ -99,7 +99,7 @@ table{
     border-style: solid;
     border-width: 3px;
     padding-right: 0%;
-    vertical-align: auto;
+    vertical-align: 50%;
     empty-cells: hide;
 }
 table tr:nth-child(even){
