@@ -1,9 +1,22 @@
 div{
   background-color:  hsla(140, 60%, 26%, 0.3);
+  /*border:2px solid black;*/
+}
+
+div.navbar{
+    display: none;
+}
+div.navbar li{
+    border-radius: 25px;
+}
+
+body{
+    background-image: linear-gradient(0deg, hsla(19, 67%, 92%, 0.99),hsla(199, 45%, 74%, 0.87),hsla(199, 45%, 52%, 0.87),rgba(34, 85, 109, 0.87),blue,navy);
 }
 
 footer{
     position: fixed;
+    background-color: rgb(13, 65, 47);
 }
 
 div.introduction h1, p{
@@ -13,25 +26,73 @@ div.introduction h1, p{
 
 div.introduction img{
     /*display: grid;*/
+    width: 275px;
+    height: 400px;
     float: right;
-    width: 30%;
-    height: 50%;
+    /*grid-column: 3/4;
+    grid-row: 4;*/
+}
+div.introduction{
+    display: grid;
+    grid-column: 1/ 4;
+    grid-row: 1/2;
 }
 div.assignment{
+    display: grid;
+    grid-column: 3/4;
     grid-row: 1/3;
+}
+
+.portfolio, .ContactInformation, .schedule {
+    border-right: 3px solid palevioletred;
+    border-bottom: 3px solid rgb(235, 96, 172);
+}
+
+body{
+    background-image: linear-gradient(rgb(114, 221, 114), rgb(38, 173, 38) rgb(44, 150, 115), rgb(98, 198, 245));
 }
 p{
     font-family: Helvetica;
     line-height: 20px;
     text-align: center;
+    
 }
-
+p::first-letter {
+    color:blueviolet;
+}
+.portfolio p:first-of-type{
+    box-shadow: 0 4px 8px black;
+}
+ul{
+    list-style-image: url("IMG.E6628.JPG");
+}
 li{
     color: rgb(1, 37, 9);
     font-weight: bold;
 }
 h1{
-    transform: uppercase;
+    text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 2px 2px darkslategrey;
+    border-radius: 25px;
+}
+link{
+    text-decoration: none;
+    
+}/*
+href{
+
+}*/
+table{
+    border-style: solid;
+    border-width: 3px;
+    padding-right: 0%;
+    vertical-align: auto;
+    empty-cells: hide;
+}
+table tr:nth-child(even){
+    background-color: rgb(209, 92, 37);
+}
+table tr:nth-child(odd){
+    background-color: rgb(86, 42, 168);
 }
