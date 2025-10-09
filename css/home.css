@@ -75,14 +75,26 @@ h1{
     letter-spacing: 3px;
     text-shadow: 2px 2px darkslategrey;
     border-radius: 25px;
+    transition: 2s ease-in;
+}
+h1:hover{
+    transform: rotate(720deg);
 }
 link{
     text-decoration: none;
-    
-}/*
-href{
-
-}*/
+}
+link, a:hover{
+    color: rgb(209, 61, 85);
+    text-decoration: none;
+}
+a:visited{
+    color:rgb(29, 139, 101);
+    text-decoration: none;
+}
+a:link{
+    color: beige;
+    text-decoration: none;
+}
 table{
     border-style: solid;
     border-width: 3px;
