@@ -3,7 +3,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style type="text/css">
-        .container-xxl{
+        div.container-xxl{
             background-color: hsl(145, 82%, 13%);
             color: hsl(29, 88%, 16%);
             padding: 0;
@@ -20,6 +20,9 @@
             border-bottom: 20px hsl(146, 68%, 24%);
             box-shadow: 8px 8px 10px hsl(145, 82%, 13%);
         }
+        ul{
+            font-weight: bold;
+        }
     </style>
 
     
@@ -29,7 +32,7 @@
         <div class="row">
             <div class="col">
                 <div class="navbar navbar-expand-lg">
-                    <ul class="navbar nav">
+                    <ul class= "navbar nav bg-success" >
                         <li class="nav-item"> <a class="nav-link" href="https://www.usca.edu"> USCA Webpage</a> </li>
                         <li class="nav-item"> <a class="nav-link" href="#Assignments"> Assignment Section</a> </li>
                         <li class="nav-item"> <a class="nav-link" href="#ContactInformation"> Contact Information Section</a> </li>
@@ -55,10 +58,10 @@
                     <input class="form-control" type="text" id="lname" name="lname" placeholder="anonymous" required>
                     <label for="lname"> Last Name: </label>
                 </div>
-                <div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" type="text" id="mail" name="mail" placeholder="name@domain.com">
                     <label for="mail"> Email Address: </label>
-                    <br>
-                    <input type="email" id="mail" name="mail" placeholder="name@domain.com">
+                    <p class="fs-6">Your email will not be shared with anyone.</p>
                 </div>
           
                 <fieldset>
