@@ -8,8 +8,12 @@
             color: hsl(29, 88%, 16%);
             padding: 0;
         }
+        form{
+            background-color: hsl(145, 82%, 13%);
+        }
         body {
             background-color: hsl(29, 88%, 16%);
+            color: hsl(101, 81%, 43%)
         }
         .navbar{
             background-color: green-800;
@@ -24,7 +28,8 @@
         }
         ul{
             font-weight: bold;
-        }
+        } 
+    
     </style>
 
     
@@ -68,7 +73,7 @@
                     </div>
           
                     <fieldset>
-                        <legend>Would you recommend this website to others?</legend>
+                        <legend class = "text-warning">Would you recommend this website to others?</legend>
                         <input type="radio" id="recommend_yes" name="recommend" value="yes">
                         <label for="recommend_yes"> Yes </label><br>
                         <input type="radio" id="recommend_no" name="recommend" value="no">
@@ -121,7 +126,7 @@
                         <label class="form-check-label" for="Pandora"> Pandora </label><br>
                     </div>
                     <div>
-                        <input type="submit" class=""> Submit </input>
+                        <button type="submit" class="btn btn-danger"> Submit </button>
                         
                     </div>
                 
