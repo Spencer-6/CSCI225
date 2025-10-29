@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Power Bill Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    h1 { color: #0044cc; }
+    label { display: block; margin-top: 10px; }
+    input, select { padding: 5px; width: 200px; }
+    button { margin-top: 15px; padding: 10px 20px; }
+    .output { margin-top: 20px; border-top: 2px solid #ccc; padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Power Bill Calculator</h1>
+
+  <label>Monthly Usage (kWh): <input type="number" id="usage"></label>
+  <label>Days in Billing Period: <input type="number" id="days"></label>
+  
+  <label>Inside City Limits?
+    <select id="city">
+      <option value="inside">Yes</option>
+      <option value="outside">No</option>
+    </select>
+  </label>
+  
+  <label>Season:
+    <select id="season">
+      <option value="summer">Summer</option>
+      <option value="winter">Winter</option>
+    </select>
+  </label>
+  
+  <label>Tax Rate (%): <input type="number" id="tax" step="0.01"></label>
+
+  <button onclick="calculateBill()">Calculate Bill</button>
+
+  <div class="output" id="result"></div>
+
+  <script>
+    function calculateBill() {
+      // Read and convert inputs
+      let usage = parseFloat(document.getElementById('usage').value);
+      let days = parseFloat(document.getElementById('days').value);
+      let city = document.getElementById('city').value;
+      let season = document.getElementById('season').value;
+      let tax = parseFloat(document.getElementById('tax').value) / 100;
+
+      if (isNaN(usage) || isNaN(days) || isNaN(tax)) {
+        alert("Please fill out all fields correctly.");
+        return;
+      }
+
+      // Base charge per day (¢46.03/day → $0.4603/day)
+      let baseCharge = 0.4603 * days;
+
+      // --- Tiered usage cost ---
+      let tier1, tier2, tier3;
+      if (season === "summer") {
+        tier1 = Math.min(usage, 650) * 0.066678;
+        tier2 = Math.min(Math.max(usage - 650, 0), 350) * 0.110748;
+        tier3 = Math.max(usage - 1000, 0) * 0.114625;
+      } else { // winter
+        tier1 = Math.min(usage, 650) * 0.062404;
+        tier2 = Math.min(Math.max(usage - 650, 0), 350) * 0.062404;
+        tier3 = Math.max(usage - 1000, 0) * 0.062404;
+      }
+
+      let baseRevenue = baseCharge + tier1 + tier2 + tier3;
+
+      // Fuel Cost Rider
+      let fuelCostRate = (season === "summer") ? 0.045876 : 0.042859;
+      let fuelCost = usage * fuelCostRate;
+
+      // Percentage riders
+      let DSM = baseRevenue * 0.015989;
+      let Nuclear = baseRevenue * 0.041562;
+      let Environmental = baseRevenue * 0.162813;
+
+      let totalRevenue = baseRevenue + fuelCost + DSM + Nuclear + Environmental;
+
+      // Franchise Fee
+      let franchiseRate = (city === "inside") ? 0.030674 : 0.011839;
+      let franchiseFee = totalRevenue * franchiseRate;
+
+      // Total before tax
+      let totalBeforeTax = totalRevenue + franchiseFee;
+
+      // Add tax
+      let taxAmount = totalBeforeTax * tax;
+      let totalBill = totalBeforeTax + taxAmount;
+
+      // Format numbers to 2 decimal places
+      function f(x) { return x.toFixed(2); }
+
+      // Display results
+      document.getElementById('result').innerHTML = `
+        <h1>Details of your bill</h1>
+        <p>Base Charge: $${f(baseCharge)}</p>
+        <p>Tier 1: $${f(tier1)} | Tier 2: $${f(tier2)} | Tier 3: $${f(tier3)}</p>
+        <p>Base Revenue -- Base Bill Subtotal: $${f(baseRevenue)}</p>
+        <p>Fuel Cost: $${f(fuelCost)}</p>
+        <p>DSM Rider: $${f(DSM)}</p>
+        <p>Nuclear Cost Recovery: $${f(Nuclear)}</p>
+        <p>Environmental Cost: $${f(Environmental)}</p>
+        <p>Total Revenue: $${f(totalRevenue)}</p>
+        <p>Franchise Fee: $${f(franchiseFee)}</p>
+        <p>Total Before Tax: $${f(totalBeforeTax)}</p>
+        <p>Tax: $${f(taxAmount)}</p>
+        <h3>Total Bill: $${f(totalBill)}</h3>
+      `;
+
+      // Redirect if bill > $500
+      if (totalBill > 500) {
+        window.open("https://www.georgiapower.com/residential/save-money-and-energy/products-programs.html", "_blank");
+      }
+    }
+  </script>
+</body>
+</html>
